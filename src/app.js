@@ -1,3 +1,27 @@
+function formatDate(timestamp) {
+  // calculate the date
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
 function displayTemp(response) {
   console.log(response);
   let tempElement = document.querySelector("#curr-temp");
@@ -20,6 +44,9 @@ function displayTemp(response) {
 
   let highElement = document.querySelector("#high-temp");
   highElement.innerHTML = Math.round(response.data.main.temp_min);
+
+  let dateElement = document.querySelector("#curr-date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 let apiKey = "cac27e453346e9164edaf605b6536f2f";
