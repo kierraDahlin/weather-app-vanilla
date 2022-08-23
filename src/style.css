@@ -152,3 +152,8 @@ button:hover,
   color: #cca8e9;
   margin-bottom: 10px;
 }
+
+.author-note {
+  font-size: 12px;
+  margin: 20px 0;
+}
