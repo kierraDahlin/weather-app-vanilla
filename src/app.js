@@ -23,7 +23,6 @@ function formatDate(timestamp) {
 }
 
 function displayTemp(response) {
-  console.log(response);
   let tempElement = document.querySelector("#curr-temp");
   tempElement.innerHTML = Math.round(response.data.main.temp);
 
@@ -69,7 +68,25 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-search("westlock");
+function changeUnits(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#curr-temp");
+  let temp = tempElement.innerHTML;
+  temp = Number(temp);
+  if (unitsSpan.innerHTML === "C") {
+    tempElement.innerHTML = Math.round((temp * 9) / 5 + 32);
+    unitsSpan.innerHTML = "F";
+  } else {
+    tempElement.innerHTML = Math.round(((temp - 32) * 5) / 9);
+    unitsSpan.innerHTML = "C";
+  }
+}
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let unitsSpan = document.querySelector("#units");
+let unitsBtn = document.querySelector("#units-btn");
+unitsBtn.addEventListener("click", changeUnits);
+
+search("Westlock");
