@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla Weather App</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,36 +38,32 @@
 
       <div class="current-weather-container">
         <div class="current-weather-info">
-          <h1>Edmonton</h1>
-          <h2>Tuesday 12:30</h2>
-          <h2>Clear</h2>
+          <h1 id="curr-city"></h1>
+          <h2 id="curr-date">Tuesday 12:30</h2>
+          <h2 id="curr-description">Clear</h2>
           <ul>
             <li>
               Wind:
-              <span>6.69</span>
-              km/h
+              <span id="wind">6.69</span>km/h
             </li>
             <li>
               Humidity:
-              <span>58</span>
-              %
+              <span id="humidity">58</span>%
             </li>
             <li>
               Low:
-              <span>24</span>
-              °C
+              <span id="low-temp">24</span>°C
             </li>
             <li>
               High:
-              <span>24</span>
-              °C
+              <span id="high-temp">24</span>°C
             </li>
           </ul>
         </div>
 
         <div class="current-weather-display">
           <i class="fa-solid fa-sun"></i>
-          <h2>22°C</h2>
+          <h2><span id="curr-temp"></span>°C</h2>
         </div>
       </div>
 

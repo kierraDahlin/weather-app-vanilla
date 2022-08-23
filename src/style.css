@@ -28,6 +28,13 @@ button,
   font-family: "Ubuntu", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+}
+
 p,
 a,
 li,
@@ -62,7 +69,7 @@ button:hover,
   color: #90cedc;
 }
 .weather-container {
-  width: 800px;
+  max-width: 800px;
   margin: 40px auto;
   padding: 50px;
 
